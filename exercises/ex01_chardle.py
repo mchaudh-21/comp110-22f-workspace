@@ -16,7 +16,7 @@ if len(letter) != 1:
 
 print("Searching for", letter, "in", word)
 
-# Check if letter is in word
+# Check if letter is in the word
 count = 0
 
 if letter == word[0]:
