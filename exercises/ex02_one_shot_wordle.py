@@ -1,9 +1,9 @@
-"""EX02 - One Shot Wordle"""
+"""EX02 - One Shot Wordle!"""
 
 __author__ = "730550997"
 
 # Define variables
-secret_word =  "python"
+secret_word = "python"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
@@ -16,7 +16,7 @@ valid = False
 guess_index = 0
 emoji_str = ""
 
-while valid == False:
+while valid is False:
     if len(user_guess) == len(secret_word):
         valid = True
 
@@ -28,13 +28,13 @@ while valid == False:
                 chr_exists = False
                 # While loop to see if the letter is in the word, doesn't matter about where it is
                 secret_index = 0
-                while chr_exists == False and secret_index < len(secret_word):
+                while chr_exists is False and secret_index < len(secret_word):
                     if user_guess[guess_index] == secret_word[secret_index]:
                         chr_exists = True
                     else:
                         secret_index += 1
 
-                if chr_exists == True:
+                if chr_exists is True:
                     emoji_str += f"{YELLOW_BOX}" 
                 else:
                     emoji_str += f"{WHITE_BOX}"
@@ -44,8 +44,8 @@ while valid == False:
 
         # Tell user if their guess was correct        
         if user_guess == secret_word:
-            print(f"Woo! You got it!")
+            print("Woo! You got it!")
         else:
-            print(f"Not quite. Play again soon!")
+            print("Not quite. Play again soon!")
     else:
         user_guess = input(f"That was not {len(secret_word)} letters! Try again: ")
