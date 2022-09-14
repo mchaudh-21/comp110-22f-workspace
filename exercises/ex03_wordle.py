@@ -1,10 +1,10 @@
 """EX03 -- Structured Wordle!"""
 
-__author__= "730550997"
+__author__ = "730550997"
 
 
-"""Function that checks if a letter is in a given word; returns True or False based on result"""
 def contains_char(word: str, char: str) -> bool:
+    """Function that checks if a letter is in a given word; returns True or False based on result."""
     assert len(char) == 1
     chr_exists = False
 
@@ -21,10 +21,8 @@ def contains_char(word: str, char: str) -> bool:
     else:
         return False
 
-
-"""Given 2 strings of same length, one a guess the other the answer, this function
-returns an emoji string that shows which letters are right or wrong"""
 def emojified(user_guess: str, secret_word: str) -> str:
+    """Given 2 strings of same length, one a guess the other the answer, this function returns an emoji string that shows which letters are right or wrong."""
     # define colors
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"
@@ -50,8 +48,8 @@ def emojified(user_guess: str, secret_word: str) -> str:
     return emoji
 
 
-"""Function that asks user for guess and then checks if it is of correct length"""
 def input_guess(expected_len: int) -> str:
+    """Function that asks user for guess and then checks if it is of correct length."""
     guess = input(f"Enter a {expected_len} character word: ")
     valid_guess= False
     while valid_guess is False:
@@ -60,11 +58,11 @@ def input_guess(expected_len: int) -> str:
             guess = input(f"Enter a {expected_len} character word: ")
         else:
             valid_guess = True
-            return guess
+    return guess
 
 
-"""Function that runs all functions, entrypoint for the program and main game loop """
 def main() -> None:
+    """Function that runs all functions, entrypoint for the program and main game loop."""
     turn = 1
     secret = "codes"
     win = False
@@ -72,7 +70,7 @@ def main() -> None:
     while turn <= 6 and win is False:
         print(f"=== Turn {turn}/6 ===")
         guess = input_guess(5)
-        emoji = emojified(guess,secret)
+        emoji = emojified(guess, secret)
 
         if guess == secret:
             print(emoji)
@@ -86,7 +84,6 @@ def main() -> None:
         print("X/6 - Sorry, try again tomorrow!")
 
 
-
-# icing to make the module more accessible
 if __name__ == "__main__":
+    # Icing to make module more accesible.
     main()
