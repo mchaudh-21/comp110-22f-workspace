@@ -21,8 +21,8 @@ def contains_char(word: str, char: str) -> bool:
     else:
         return False
 
+
 def emojified(user_guess: str, secret_word: str) -> str:
-    
     """Given 2 strings of same length, one a guess the other the answer, this function returns an emoji string that shows which letters are right or wrong."""
     # define colors
     WHITE_BOX: str = "\U00002B1C"
