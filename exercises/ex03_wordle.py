@@ -22,6 +22,7 @@ def contains_char(word: str, char: str) -> bool:
         return False
 
 def emojified(user_guess: str, secret_word: str) -> str:
+    
     """Given 2 strings of same length, one a guess the other the answer, this function returns an emoji string that shows which letters are right or wrong."""
     # define colors
     WHITE_BOX: str = "\U00002B1C"
@@ -51,7 +52,7 @@ def emojified(user_guess: str, secret_word: str) -> str:
 def input_guess(expected_len: int) -> str:
     """Function that asks user for guess and then checks if it is of correct length."""
     guess = input(f"Enter a {expected_len} character word: ")
-    valid_guess= False
+    valid_guess = False
     while valid_guess is False:
         if len(guess) != expected_len:
             print(f"That wasn't {expected_len} chars! Try again: ")
