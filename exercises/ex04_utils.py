@@ -2,8 +2,8 @@
 __author__ = "730550997"
 
 
-def all(list1: list, num: int) -> bool:
-    """Function that figures out if all of the integers in a given list are the same as a given integer"""
+def all(list1: list[int], num: int) -> bool:
+    """Function that figures out if all of the integers in a given list are the same as a given integer."""
     index_num = 0
     valid = True
     while index_num < len(list1) and valid is True:
@@ -14,8 +14,8 @@ def all(list1: list, num: int) -> bool:
     return valid
 
 
-def max(list2: list) -> int:
-    """Function that finds max value in list"""
+def max(list2: list[int]) -> int:
+    """Function that finds max value in list."""
     if len(list2) == 0:
         raise ValueError("max() arg is an empty List")
 
@@ -28,8 +28,8 @@ def max(list2: list) -> int:
     return max_num
 
 
-def is_equal(list1: list, list2: list) -> bool:
-    """Function that checks if two lists have deep equality """
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Function that checks if two lists have deep equality."""
     # check length
     if len(list1) != len(list2):
         return False
