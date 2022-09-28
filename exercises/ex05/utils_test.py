@@ -11,13 +11,13 @@ def test_only_evens() -> None:
     assert only_evens([]) == []
 
 
-def test_only_evens() -> None:
+#def test_only_evens() -> None:
     """Tests use case of all odd numbers."""
     list_odd = [1, 3, 5, 7]
     assert only_evens([list_odd]) == list_odd
 
 
-def test_only_evens() -> None:
+#def test_only_evens() -> None:
     """Tests use case of what a user input should output to."""
     user_input = [1, 2, 3, 4, 5]
     assert only_evens(user_input) == [2, 4]
@@ -29,12 +29,12 @@ def test_concat() -> None:
     assert concat([]) == []
 
 
-def test_concat() -> None:
+#def test_concat() -> None:
     """Tests use case of one empty list and a nonempty list."""
     assert concat([1, 2], []) == [1, 2]
 
 
-def test_concat() -> None:
+#def test_concat() -> None:
     """Test use case of possible user input and its output."""
     assert concat([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]
 
@@ -45,13 +45,13 @@ def test_sub() -> None:
     assert sub([], 1, 3) == []
 
 
-def test_sub() -> None:
+#def test_sub() -> None:
     """Tests use case of a negative start index."""
     example = [1, 2, 3, 4]
     assert sub(example, -2, 2) == [1, 2]
 
 
-def test_sub() -> None:
+#def test_sub() -> None:
     """Tests use case of out of range end index."""
     example = [1, 2, 3, 4]
     assert sub(example, 1, 9) == [2, 3, 4]
