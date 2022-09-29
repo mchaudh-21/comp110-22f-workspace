@@ -2,7 +2,9 @@
 __author__ = "730550997"
 
 
-from exercises.ex05.utils import only_evens, concat, sub
+from exercises.ex05.utils import only_evens
+from exercises.ex05.utils import concat
+from exercises.ex05.utils import sub
 
 
 # tests for only_evens
