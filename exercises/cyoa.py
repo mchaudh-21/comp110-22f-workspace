@@ -43,8 +43,7 @@ def path1() -> None:
     # access global 
     global points
     points += 5
-    choice = int(input("\nNone of the switches are working. Do you: 1-Go outside to get into the apartment building so you can turn on the generator?\n"\
-        "2-Grab a flashlight and use that to finish up your work for the night.\t"))
+    choice = int(input("\nNone of the switches are working. Do you: 1-Go outside to get into the apartment building so you can turn on the generator? \n2-Grab a flashlight and use that to finish up your work for the night.\t"))
     
     if choice == 1:
         points += 10
@@ -53,8 +52,7 @@ def path1() -> None:
 
         if choice2 == 1:
             points -= 10
-            print(f"\nUh oh {player}. Looks like this shadowy figure was a criminal on the loose...You got caught witnessing something highly illegal, and the criminal couldn't "\
-                "leave any loose ends.")
+            print(f"\nUh oh {player}. Looks like this shadowy figure was a criminal on the loose...You got caught witnessing something highly illegal, and the criminal couldn't leave any loose ends.")
             endgame(2)
 
         elif choice2 == 2:
@@ -64,8 +62,7 @@ def path1() -> None:
             
             if choice3 == 1:
                 points += 5
-                print(f"\nThe neighbor opens the door and says in surprise, {player}? Turns out, you knocked on your ex-best friend's door. You try explaining "\
-                    "what's happening but she doens't believe you because of your past as a pathalogical liar. She slams the door on your face. What do you do now?")
+                print(f"\nThe neighbor opens the door and says in surprise, {player}? Turns out, you knocked on your ex-best friend's door. You try explaining what's happening but she doens't believe you because of your past as a pathalogical liar. She slams the door on your face. What do you do now?")
                 choice4 = int(input("1-Stand there in confusion. \n2-Run back to your room as fast as you can.\t"))
 
                 if choice4 == 1:
