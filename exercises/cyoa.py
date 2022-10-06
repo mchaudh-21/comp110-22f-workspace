@@ -3,14 +3,13 @@ __author__ = "730550997"
 
 
 # import
-from pickle import HIGHEST_PROTOCOL
 import random
 
 # global variables:
 points: int = 0
 player: str = ""
 # Use randint
-stairs: int = random.randint(2,20)
+stairs: int = random.randint(2, 20)
 
 # named constants
 HAPPY_EMOJI = "\U0001F60A"
@@ -18,12 +17,11 @@ SAD_EMOJI = "\U0001F622"
 
 
 def greet() -> None:
-    """FUnction that gives a welcome message plus takes name."""
-    # introduce game
-    print("Welcome to my adventure game. \nThis adventure scenario will help you find out if you can survive a power outage in your sketchy apartment complex."\
-        "All you need to do is follow the story line and choose the number based on the choice you wish to make. Enjoy...\t")
+    """Function that gives a welcome message plus takes name."""
+    # Introduce game
+    print("Welcome to my adventure game. \nThis adventure scenario will help you find out if you can survive a power outage in your sketchy apartment complex. All you need to do is follow the story line and choose the number based on the choice you wish to make. Enjoy...\t")
 
-    # get player name
+    # Get player name
     global player
     name = input("What is your name: ")
     player = name.capitalize()
@@ -48,7 +46,6 @@ def path1() -> None:
     choice = int(input("\nNone of the switches are working. Do you: 1-Go outside to get into the apartment building so you can turn on the generator?\n"\
         "2-Grab a flashlight and use that to finish up your work for the night.\t"))
     
-    ############## CHOICE 1 ################
     if choice == 1:
         points += 10
         print(f"\nYou run down {stairs} flights of stairs. As you make your way to the shady part of the building's parking lot, you see a shadowy figure whisper, {player}. What do you do?")
@@ -82,8 +79,7 @@ def path1() -> None:
 
             elif choice3 == 2:
                 points -= 5
-                print(f"\nAs you sit there crying in the rain, the shadowy figure comes up behind you with an umbrella. You are about to scream when you hear him whisper, {player} are you ok? "\
-                    "Turns out, the shadowy figure was a childhood best friend that had come to your apartment building to visit but didn't know what room you lived in so he got lost outside. What do you do next?")
+                print(f"\nAs you sit there crying in the rain, the shadowy figure comes up behind you with an umbrella. You are about to scream when you hear him whisper, {player} are you ok? Turns out, the shadowy figure was a childhood best friend that had come to your apartment building to visit but didn't know what room you lived in so he got lost outside. What do you do next?")
                 choice4 = int(input("1-Ask for help in turning on your generator. \n2-Take him back up to your apartment to get some dry clothes on. \n3-Tell him to call an uber because you are creeped out at his sudden appearence.\t"))
                 
                 if choice4 == 1:
@@ -92,8 +88,7 @@ def path1() -> None:
                     endgame(1)
                 elif choice4 == 2:
                     points -= 5
-                    print("\nYou two carefully reach your apartment, where you immediately run to grab towels for the both of you. Suddenly you hear the door lock, and your 'friend' walks "\
-                        "towards you with an object in your hand. What do you do?")
+                    print("\nYou two carefully reach your apartment, where you immediately run to grab towels for the both of you. Suddenly you hear the door lock, and your 'friend' walks towards you with an object in your hand. What do you do?")
                     choice5 = int(input("1-Freeze out of fear. \n2-Scream as loudly as possible. \n3-Grab your nearest object (a physics textbook) and hope for the best.\t"))
 
                     if choice5 == 1:
@@ -111,26 +106,21 @@ def path1() -> None:
 
                 else:
                     points += 10
-                    print("\nWhile you were saying this, your landlord, who just came out of the basement to fix the breaker that had turned off, comes up behind you. "\
-                        "The 'best friend' turned out to be a criminal and you made the right call to send him away. Since your landlord is also there, the criminal can't "\
-                        "hurt you, so he slowly runs away.")
+                    print("\nWhile you were saying this, your landlord, who just came out of the basement to fix the breaker that had turned off, comes up behind you. The 'best friend' turned out to be a criminal and you made the right call to send him away. Since your landlord is also there, the criminal can't hurt you, so he slowly runs away.")
                     endgame(1)
             
             else:
                 points += 10
-                print("\nYou do your best to fend off the attacker. However, once he comes near the dim streetlight you fell under, you see that it's your landlord. Turns out "\
-                        "he had come down to fix the lights as well, but lost his keys somewhere in the grass because a loud sound jumpscared him. What do you do?")
+                print("\nYou do your best to fend off the attacker. However, once he comes near the dim streetlight you fell under, you see that it's your landlord. Turns out he had come down to fix the lights as well, but lost his keys somewhere in the grass because a loud sound jumpscared him. What do you do?")
                 choice4 = int(input("1-Help him look for his keys. \n2-Say OK and then go back to your apartment because you barely know the guy.")) 
 
                 if choice4 == 1:
                     points -= 5
-                    print("\nAs the two of you search the wet grass for the keys to the basement, another shadowy figure emmerges from behind the bushes. This is the criminal that's been making national news "\
-                        "because he ran away from a high security prison. You and your landlord are witnesses and now cannot escape...")
+                    print("\nAs the two of you search the wet grass for the keys to the basement, another shadowy figure emmerges from behind the bushes. This is the criminal that's been making national news because he ran away from a high security prison. You and your landlord are witnesses and now cannot escape...")
                     endgame(2)
                 else:
                     points += 5
-                    print(f"\nYou make it back to your apartment, wet, tired, and extremely confused. By the time you grab a piece of chocolate as a reward for running up and down {stairs} flights of stairs "\
-                        "the lights turn back on. Guess he found the keys afterall.")
+                    print(f"\nYou make it back to your apartment, wet, tired, and extremely confused. By the time you grab a piece of chocolate as a reward for running up and down {stairs} flights of stairs the lights turn back on. Guess he found the keys afterall.")
                     endgame(1)
 
         else:
@@ -156,9 +146,7 @@ def path1() -> None:
                 points -= 10
                 print("\nYou find out the hard way that lightning can strike the same spot twice. While it wasn't a direct hit, the lightning strike knocks you out, so your landlord, who was busy fixing the light, finds you laying outside an hour after the tragedy.")
                 endgame(2)
-
     
-    ############ CHOICE 2 ##############
     else: 
         points += 5
         print("\nYou find out that tragically, your flashlight is dead. And of course, you only have dead batteries in your junk drawer. What do you do?")
@@ -249,7 +237,7 @@ def path2() -> None:
                 print("\nThe shadowy figure approaches you and tries to get to you, but you are able to defend yourself just enough to run away.")
                 endgame(1)
         else:
-            points -=5
+            points -= 5
             print("\nThe shadowy figure doesn't appreciate this. He starts approaching you. What do you do?")
             choice3 = int(input(f"1-Bang on all the closest doors to ask for help. \n2-Freeze out of fear. \n3-Somehow sprint up the {stairs} flights of stairs due to your incredible cross country abilities.\t"))
 
@@ -269,8 +257,8 @@ def path2() -> None:
 
 def extra_points(current: int) -> int:
     """Bonus point function that is only added when the high score is increasde."""
-    bonus = random.randint(1,50)
-    answer = random.randint(1,10)
+    bonus = random.randint(1, 50)
+    answer = random.randint(1, 10)
 
     print(f"{player}, since your current score exceeds the previous highest score, you can earn {bonus} bonus points if you can answer this question correctly.")
     guess = int(input("Choose a number from 1 to 10: "))
@@ -285,6 +273,7 @@ def extra_points(current: int) -> int:
 
 
 def main() -> None:
+    """Main function that runs the loop."""
     user_choice = "Y"
     high_score = 0
     greet()
@@ -292,8 +281,7 @@ def main() -> None:
         # Enter experience with 3 choices:
         print("You are resting in your tiny yet pricey student apartment in the midst of a late-night thunderstorm. Suddenly, all the lights go out.")
 
-        enter = int(input(f"{player}. How do you want to proceed: 1-Check all the switches and power outlets.\n"\
-            "2-Take this oppurtunity to meditate in the dark.\n3-Go to sleep because it's already 10 PM.\n"))  
+        enter = int(input(f"{player}. How do you want to proceed: 1-Check all the switches and power outlets.\n2-Take this oppurtunity to meditate in the dark.\n3-Go to sleep because it's already 10 PM.\n"))  
         
         if enter == 1:
             path1()
@@ -309,9 +297,6 @@ def main() -> None:
 
         print(f"Your high score: {high_score}. \nYour current score: {points}.")
         user_choice = input("Would you like to play again? Y/N")
-
-
-
 
 
 if __name__ == "__main__":
