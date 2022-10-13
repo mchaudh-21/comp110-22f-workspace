@@ -2,7 +2,7 @@
 __author__ = "730550997"
 
 
-def invert(dict1: dict[str,str]) -> dict[str,str]:
+def invert(dict1: dict[str, str]) -> dict[str, str]:
     """Function that inverts the keys and values of a dictionary."""
     dict2 = {}
     for key in dict1:
@@ -20,7 +20,7 @@ def invert(dict1: dict[str,str]) -> dict[str,str]:
     return dict2
 
 
-def favorite_color(dict1: dict[str,str]) -> str:
+def favorite_color(dict1: dict[str, str]) -> str:
     """Function that takes a dictionary and returns the colror that occurs with highest frequency."""
     color_list = []
     for name in dict1:
@@ -44,7 +44,7 @@ def favorite_color(dict1: dict[str,str]) -> str:
     return most_frequent_color
 
 
-def count(list1: list[str]) -> dict[str,int]:
+def count(list1: list[str]) -> dict[str, int]:
     """Function that makes a dictionary with values from a list as keys and their frequencies as values."""
     result_dict = {}
     for val in list1:
