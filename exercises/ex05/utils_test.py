@@ -16,7 +16,7 @@ def test_only_evens() -> None:
 def test_only_evens_one() -> None:
     """Tests use case of all odd numbers."""
     list_odd = [1, 3, 5, 7]
-    assert only_evens([list_odd]) == list_odd
+    assert only_evens([list_odd]) == []
 
 
 def test_only_evens_two() -> None:

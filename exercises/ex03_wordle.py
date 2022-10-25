@@ -65,7 +65,7 @@ def input_guess(expected_len: int) -> str:
 def main() -> None:
     """Function that runs all functions, entrypoint for the program and main game loop."""
     turn = 1
-    secret = "codes"
+    secret = "cacao"
     win = False
 
     while turn <= 6 and win is False:
