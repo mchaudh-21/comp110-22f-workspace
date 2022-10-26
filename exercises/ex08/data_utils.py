@@ -49,8 +49,8 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Make a new column based table using only the first N rows of data for each column."""
     result: dict[str, list[str]] = {}
-    if n >= len(table.keys()):
-        return result
+    if n >= len(table):
+        return table
 
     for column in table.keys():
         n_vals = []
@@ -81,7 +81,7 @@ def concat(table1: dict[str, list[str]], table2: dict[str, list[str]]) -> dict[s
         result[column] = value
 
     for column in table2.keys():
-        values = table2[column]
+        value = table2[column]
         for current_columns in result.keys():
             if column == current_columns:
                 result[current_columns] += value
