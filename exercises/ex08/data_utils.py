@@ -4,7 +4,6 @@ __author__ = "730550997"
 
 
 from csv import DictReader
-from tabulate import tabulate
 
 # Define your functions below
 
@@ -82,11 +81,11 @@ def concat(table1: dict[str, list[str]], table2: dict[str, list[str]]) -> dict[s
 
     for column in table2.keys():
         value = table2[column]
-        for current_columns in result.keys():
-            if column == current_columns:
-                result[current_columns] += value
-            else:
-                result[column] = value
+        if column in result.keys():
+            for item in value:
+                result[column].append(item)
+        else:
+            result[column] = value
     
     return result
 
