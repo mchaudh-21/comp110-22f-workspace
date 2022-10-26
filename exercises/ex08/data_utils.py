@@ -52,8 +52,8 @@ def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
 
     for column in table.keys():
         n_vals = []
-        for value in range(n):
-            n_vals.append(value)
+        for value in range(0, n):
+            n_vals.append(table[column][value])
         result[column] = n_vals
     
     return result
