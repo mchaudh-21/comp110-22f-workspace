@@ -49,6 +49,8 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Make a new column based table using only the first N rows of data for each column."""
     result: dict[str, list[str]] = {}
+    if n > len(table.keys()):
+        return result
 
     for column in table.keys():
         n_vals = []
