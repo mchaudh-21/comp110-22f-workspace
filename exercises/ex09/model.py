@@ -73,13 +73,14 @@ class Cell:
         else:
             return False
         
+        
     def color(self) -> str:
         """Return the color representation of a cell."""
-        if self.is_infected() == True:
+        if self.is_infected():
             return "red"
-        elif self.is_vulnerable() == True:
+        elif self.is_vulnerable():
             return "gray"   
-        elif self.is_immune() == True:
+        elif self.is_immune():
             return "green"
 
     def contact_with(self, cell2: Cell):
@@ -87,7 +88,7 @@ class Cell:
         if self.is_infected() and cell2.is_vulnerable():
             cell2.contract_disease()
 
-        elif cell2.is_infected() and cell2.is_vulnerable():
+        elif cell2.is_infected() and self.is_vulnerable():
             self.contract_disease()
 
     def immunize(self):
@@ -114,7 +115,7 @@ class Model:
             raise ValueError("Some number of the Cell objects must be infected.")
         
         self.population = []
-        for i in range(cells ):
+        for i in range(cells):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             cell: Cell = Cell(start_location, start_direction)
@@ -161,11 +162,11 @@ class Model:
             cell.location.y = constants.MAX_Y
             cell.direction.y *= -1.0
         
-        if cell.location.x  < constants.MIN_X:
+        if cell.location.x < constants.MIN_X:
             cell.location.x = constants.MIN_X
             cell.direction.x *= -1.0
 
-        if cell.location.y  < constants.MIN_Y:
+        if cell.location.y < constants.MIN_Y:
             cell.location.y = constants.MIN_Y
             cell.direction.y *= -1.0
         
